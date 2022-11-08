@@ -27,3 +27,4 @@ C:\Users\aluno\Documents\Visual Studio 2015\Projects\crud\crud\obj\Debug\crud.Pr
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\crud\crud\obj\Debug\crud.csproj.GenerateResource.Cache
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\crud\crud\obj\Debug\crud.exe
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\crud\crud\obj\Debug\crud.pdb
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\crud\crud\obj\Debug\crud.FormEdit.resources

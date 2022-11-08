@@ -48,8 +48,9 @@
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtQtd = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodProd = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnBuscarProd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgProd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,12 +224,12 @@
             this.txtNome.Size = new System.Drawing.Size(312, 20);
             this.txtNome.TabIndex = 22;
             // 
-            // textBox1
+            // txtCodProd
             // 
-            this.textBox1.Location = new System.Drawing.Point(303, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 41;
+            this.txtCodProd.Location = new System.Drawing.Point(303, 147);
+            this.txtCodProd.Name = "txtCodProd";
+            this.txtCodProd.Size = new System.Drawing.Size(100, 20);
+            this.txtCodProd.TabIndex = 41;
             // 
             // label8
             // 
@@ -239,13 +240,24 @@
             this.label8.TabIndex = 42;
             this.label8.Text = "Codigo do Produto";
             // 
+            // btnBuscarProd
+            // 
+            this.btnBuscarProd.Location = new System.Drawing.Point(409, 147);
+            this.btnBuscarProd.Name = "btnBuscarProd";
+            this.btnBuscarProd.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarProd.TabIndex = 43;
+            this.btnBuscarProd.Text = "button2";
+            this.btnBuscarProd.UseVisualStyleBackColor = true;
+            this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProd_Click);
+            // 
             // FormEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 553);
+            this.Controls.Add(this.btnBuscarProd);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodProd);
             this.Controls.Add(this.btnConexao);
             this.Controls.Add(this.mtbPreco);
             this.Controls.Add(this.pbImgProd);
@@ -296,7 +308,8 @@
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtQtd;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodProd;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnBuscarProd;
     }
 }
