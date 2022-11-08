@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace crud
 {
@@ -49,11 +50,21 @@ namespace crud
                 //MessageBox.Show("Conexão realizada com sucesso:", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmd = new MySqlCommand();
                 cmd.Connection = conexao;
-                cmd.CommandText = "INSERT INTO produtos  VALUES (null, @nome, @descricao, @preco_uni,@quantidade,null,@marca)";
+
+                byte[] imagem_byte = null;
+
+                FileStream fileStream = new FileStream(txtCaminhoImg.Text, FileMode.Open, FileAccess.Read);
+
+                BinaryReader binaryReader = new BinaryReader(fileStream);
+
+                imagem_byte = binaryReader.ReadBytes((int)fileStream.Length);
+
+                cmd.CommandText = "INSERT INTO produtos  VALUES (null, @nome, @descricao, @preco_uni,@quantidade,@imagem,@marca)";
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text);
                 cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text);
                 cmd.Parameters.AddWithValue("@preco_uni", Convert.ToDouble(mtbPreco.Text.Replace(".",",")));
                 cmd.Parameters.AddWithValue("@quantidade", Convert.ToInt32(txtQtd.Text));
+                cmd.Parameters.AddWithValue("@imagem", imagem_byte);
                 cmd.Parameters.AddWithValue("@marca", txtMarca.Text);
                 cmd.ExecuteNonQuery();
                 txtDescricao.Text = "";
