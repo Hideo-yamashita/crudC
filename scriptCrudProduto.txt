@@ -1,0 +1,9 @@
+create table produto (
+id_prod int auto_increment not null primary key,
+nome varchar (80) not null,
+descricao blob not null,
+preco_uni float not null,
+quantidade int not null,
+imagem mediumblob,
+marca varchar(80) not null
+);
