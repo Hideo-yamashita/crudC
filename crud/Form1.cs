@@ -26,6 +26,7 @@ namespace crud
             tooltip.SetToolTip(btnEnviar,"Botao de envio");
             tooltip.SetToolTip(btnCancelar, "Cancelar envio");
             tooltip.SetToolTip(btnBuscarImg, "Procurar Imagem");
+
         }
 
 
@@ -126,6 +127,43 @@ namespace crud
             OpenFileDialog dialogo = new OpenFileDialog();
             pbImgProd.Image = new Bitmap(txtCaminhoImg.Text);
 
+        }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*
+            Form1 FmCadastro = new Form1();
+            FmCadastro.Show();
+            this.Hide();
+            */
+        }
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEdit FmEdit = new FormEdit();
+            FmEdit.Show();
+            this.Hide();
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Deseja realmente sair ?","Sair",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

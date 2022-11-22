@@ -26,14 +26,20 @@ namespace crud
         {
             try
             {
+                conexao = new MySqlConnection();
+                conexao.ConnectionString = strConexao;
+                conexao.Open();
+
+
+
                 cmd = new MySqlCommand();
                 cmd.Connection = conexao;
 
                 MySqlDataReader dataReader;
 
-                cmd.CommandText = "";
+                cmd.CommandText = "SELECT * FROM PRODUTOS where id_prod = @id_prod";
 
-                cmd.Parameters.AddWithValue("@txtCodProd", Convert.ToInt32(txtCodProd.Text));
+                cmd.Parameters.AddWithValue("@id_prod", Convert.ToInt32(txtCodProd.Text));
 
                 dataReader = cmd.ExecuteReader();
 
@@ -58,6 +64,14 @@ namespace crud
                     }
 
                 }
+                if(dataReader.HasRows)
+                {
+                    MessageBox.Show("Dados localizado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum dado localizado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
 
             }
@@ -69,6 +83,18 @@ namespace crud
             {
                 conexao.Close();
             }
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 FmCadastro = new Form1();
+            FmCadastro.Show();
+            this.Hide();
         }
     }
 }
